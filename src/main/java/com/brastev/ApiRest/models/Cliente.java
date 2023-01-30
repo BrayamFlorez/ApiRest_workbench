@@ -1,6 +1,9 @@
 package com.brastev.ApiRest.models;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 @Getter
 @Setter
@@ -16,8 +19,8 @@ public class Cliente {
     @Column(length = 100)
     private String nombre;
     private String apellido;
-    @Temporal(TemporalType.DATE)
-    private Date fechaNacimiento;
+    @CreationTimestamp
+    private LocalDateTime fechaCreacion;
 
 
 }
